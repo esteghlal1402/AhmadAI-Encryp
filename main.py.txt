@@ -1,0 +1,14 @@
+from camera_module import capture_3d_frame
+from object_detector import detect_objects
+from object_info import get_info
+
+# گرفتن تصویر سه‌بعدی (شبیه‌سازی‌شده)
+frame = capture_3d_frame()
+
+# تشخیص اشیاء از تصویر
+objects = detect_objects(frame)
+
+# نمایش اطلاعات هر شیء
+for obj in objects:
+    info = get_info(obj)
+    print(f"🔍 شیء: {obj} → اطلاعات: {info}")
